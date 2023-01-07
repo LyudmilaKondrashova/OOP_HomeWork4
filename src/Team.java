@@ -52,4 +52,12 @@ public class Team<T extends Warior> implements Iterable<T> {  // Команда
         }
         return maxRange;
     }
+
+    public int getAllProtection() { // Суммарная защита от всех участников
+        int sumProtection = 0;
+        for (T item : warriors) {
+            sumProtection += item.getShield().protection();
+        }
+        return sumProtection;
+    }
 }

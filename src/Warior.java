@@ -1,12 +1,14 @@
-public abstract class Warior<T extends Weapon> {  // Воин
+public abstract class Warior<T extends Weapon, S extends Shield> {  // Воин
     private String name;    // Имя воина
     private int healthPoint;    // Здоровье
     private T weapon; // Оружие
+    private S shield;   // Щит
 
-    public Warior(String name, int healthPoint, T weapon) {
+    public Warior(String name, int healthPoint, T weapon, S shield) {
         this.name = name;
         this.healthPoint = healthPoint;
         this.weapon = weapon;
+        this.shield = shield;
     }
 
     public String getName() {
@@ -35,6 +37,14 @@ public abstract class Warior<T extends Weapon> {  // Воин
 
     @Override
     public String toString() {
-        return String.format("Имя: %s, здоровье: %d, оружие: %s", name, healthPoint, weapon);
+        return String.format("Имя: %s, здоровье: %d, оружие: %s, щит: %s", name, healthPoint, weapon, shield);
+    }
+
+    public S getShield() {
+        return shield;
+    }
+
+    public void setShield(S shield) {
+        this.shield = shield;
     }
 }

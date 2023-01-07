@@ -1,7 +1,7 @@
-public class Archer extends Warior<Bow> {    // Лучник
+public class Archer extends Warior<Bow, WoodenShield> {    // Лучник
 
-    public Archer(String name, int healthPoint, Bow bow) {
-        super(name, healthPoint, bow);
+    public Archer(String name, int healthPoint, Bow bow, WoodenShield woodenShield) {
+        super(name, healthPoint, bow, woodenShield);
     }
 
     @Override
